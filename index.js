@@ -67,7 +67,9 @@ try {
         vsDevCmdArgs.push(`-vcvars_ver=${toolsetVersion}`)
     if (winsdk != '')
         vsDevCmdArgs.push(`-winsdk=${winsdk}`)
-    
+
+    vsDevCmdArgs.push(`-vcvars_spectre_libs=spectre`)
+
     const cmdArgs = [ '/q', '/k'].concat(vsDevCmdArgs, ['&&', 'set'])
 
     console.log(`$ cmd ${cmdArgs.join(' ')}`)
